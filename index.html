@@ -5,8 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>منتجات</title>
     <!-- Botpress Chat Widget -->
-    <script src="https://cdn.botpress.cloud/webchat/v2.5/inject.js"></script>
-    <script src="https://files.bpcontent.cloud/2025/05/16/15/20250516151504-NOZ5039Y.js"></script>
+    <script>
+        // Function to check if the bot is loaded
+        function checkBotLoaded() {
+            console.log('Checking if bot is loaded...');
+            if (window.botpressWebChat) {
+                console.log('Botpress is loaded, initializing...');
+                window.botpressWebChat.init({
+                    host: 'https://cdn.botpress.cloud/webchat/v2.5',
+                    botId: 'NOZ5039Y',
+                    position: 'bottom-right',
+                    locale: 'ar',
+                    theme: 'light',
+                    themeColor: '#2563eb',
+                    containerWidth: '400px',
+                    layoutWidth: '400px',
+                    showConversationsButton: true,
+                    enableTranscriptDownload: true,
+                    showResetButton: true,
+                    showPoweredBy: true,
+                    showTimestamp: true,
+                    showUserAvatar: true,
+                    showBotAvatar: true,
+                    botName: 'مساعد المنتجات',
+                    botAvatarUrl: 'https://cdn.botpress.cloud/webchat/v2.5/default-avatar.png',
+                    userAvatarUrl: 'https://cdn.botpress.cloud/webchat/v2.5/default-avatar.png',
+                    stylesheet: 'https://cdn.botpress.cloud/webchat/v2.5/default.css'
+                });
+            } else {
+                console.log('Botpress not loaded yet, retrying in 1 second...');
+                setTimeout(checkBotLoaded, 1000);
+            }
+        }
+
+        // Load Botpress script
+        const script = document.createElement('script');
+        script.src = 'https://cdn.botpress.cloud/webchat/v2.5/inject.js';
+        script.onload = function() {
+            console.log('Botpress script loaded successfully');
+            checkBotLoaded();
+        };
+        script.onerror = function(error) {
+            console.error('Error loading Botpress script:', error);
+        };
+        document.head.appendChild(script);
+    </script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -40,6 +83,14 @@
             justify-content: center;
             gap: 15px;
             padding: 20px;
+        }
+        /* Ensure chat widget is visible */
+        #bp-widget {
+            position: fixed !important;
+            bottom: 20px !important;
+            right: 20px !important;
+            z-index: 9999 !important;
+            display: block !important;
         }
     </style>
 </head>
