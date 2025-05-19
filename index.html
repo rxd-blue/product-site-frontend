@@ -4,26 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>منتجات</title>
-    <!-- Botpress Chat Widget -->
-    <script src="https://cdn.botpress.cloud/webchat/v2.5/inject.js"></script>
-    <script src="https://files.bpcontent.cloud/2025/05/16/15/20250516151504-NOZ5039Y.js"></script>
-    <script>
-        // Ensure chat widget stays visible
-        function ensureChatWidgetVisible() {
-            const widget = document.querySelector('#bp-widget');
-            if (widget) {
-                widget.style.display = 'block';
-                widget.style.visibility = 'visible';
-                widget.style.opacity = '1';
-            }
-        }
-
-        // Check widget visibility every second
-        setInterval(ensureChatWidgetVisible, 1000);
-
-        // Additional check on page load
-        window.addEventListener('load', ensureChatWidgetVisible);
-    </script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -123,6 +103,27 @@
         }
 
         setInterval(checkFilterUpdate, 2000);
+    </script>
+
+    <!-- Botpress Chat Widget -->
+    <script src="https://cdn.botpress.cloud/webchat/v2.5/inject.js"></script>
+    <script src="https://files.bpcontent.cloud/2025/05/16/15/20250516151504-NOZ5039Y.js"></script>
+    <script>
+        // Ensure chat widget stays visible
+        function ensureChatWidgetVisible() {
+            const widget = document.querySelector('#bp-widget');
+            if (widget) {
+                widget.style.display = 'block';
+                widget.style.visibility = 'visible';
+                widget.style.opacity = '1';
+            }
+        }
+
+        // Check widget visibility every second
+        setInterval(ensureChatWidgetVisible, 1000);
+
+        // Additional check on page load
+        window.addEventListener('load', ensureChatWidgetVisible);
     </script>
 </body>
 </html> 
