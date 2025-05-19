@@ -3,41 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>منتجات</title>
+    <title>متجر البقالة</title>
+    <!-- Botpress Chat Widget -->
+    <script src="https://cdn.botpress.cloud/webchat/v2.5/inject.js"></script>
+    <script src="https://files.bpcontent.cloud/2025/05/16/15/20250516151504-NOZ5039Y.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        :root {
+            --primary-color: #2ecc71;
+            --secondary-color: #27ae60;
+            --background-color: #f8f9fa;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f5f5f5;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 0;
         }
-        h1 {
-            color: #333;
-            text-align: center;
+
+        .navbar {
+            background-color: var(--primary-color);
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        .product {
-            border: 1px solid #ccc;
-            padding: 15px;
-            margin: 10px;
-            display: inline-block;
+
+        .navbar-brand {
+            color: white !important;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .search-bar {
+            max-width: 500px;
+            margin: 1rem auto;
+        }
+
+        .category-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1rem 0;
+            flex-wrap: wrap;
+        }
+
+        .category-btn {
             background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            cursor: pointer;
             transition: all 0.3s ease;
         }
-        .product:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+
+        .category-btn:hover, .category-btn.active {
+            background-color: var(--primary-color);
+            color: white;
         }
-        .hidden { 
-            display: none; 
-        }
+
         .products-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            padding: 1.5rem;
+            max-width: 1400px;
+            margin: 0 auto;
         }
+
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 1rem;
+        }
+
+        .product-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-price {
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .product-brand {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .add-to-cart {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            width: 100%;
+            margin-top: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .add-to-cart:hover {
+            background-color: var(--secondary-color);
+        }
+
         /* Ensure chat widget is always visible */
         #bp-widget {
             position: fixed !important;
@@ -48,67 +138,176 @@
             visibility: visible !important;
             opacity: 1 !important;
         }
+
+        @media (max-width: 768px) {
+            .products-container {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                padding: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <h1>منتجاتنا</h1>
+    <nav class="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="#">متجر البقالة</a>
+        </div>
+    </nav>
 
-    <div class="products-container">
-        <div class="product" data-category="تليفونات" data-brand="سامسونج">
-            <h3>Samsung A23</h3>
-            <p>هاتف ذكي من سامسونج</p>
+    <div class="container">
+        <div class="search-bar">
+            <input type="text" class="form-control" placeholder="ابحث عن منتج...">
         </div>
-        <div class="product" data-category="تليفونات" data-brand="شاومي">
-            <h3>Xiaomi Note 12</h3>
-            <p>هاتف ذكي من شاومي</p>
+
+        <div class="category-buttons">
+            <button class="category-btn active" data-category="all">الكل</button>
+            <button class="category-btn" data-category="فواكه">فواكه</button>
+            <button class="category-btn" data-category="خضروات">خضروات</button>
+            <button class="category-btn" data-category="لحوم">لحوم</button>
+            <button class="category-btn" data-category="ألبان">ألبان</button>
+            <button class="category-btn" data-category="مشروبات">مشروبات</button>
+            <button class="category-btn" data-category="حلويات">حلويات</button>
         </div>
-        <div class="product" data-category="غسالات" data-brand="LG">
-            <h3>LG WashPro</h3>
-            <p>غسالة ملابس من LG</p>
-        </div>
-        <div class="product" data-category="غسالات" data-brand="سامسونج">
-            <h3>Samsung WashX</h3>
-            <p>غسالة ملابس من سامسونج</p>
+
+        <div class="products-container">
+            <!-- Products will be dynamically added here -->
         </div>
     </div>
 
     <script>
-        function filterProducts(category, brand) {
-            const products = document.querySelectorAll('.product');
-            products.forEach(p => {
-                const cat = p.dataset.category;
-                const br = p.dataset.brand;
-                if ((category && cat !== category) || (brand && br !== brand)) {
-                    p.classList.add('hidden');
-                } else {
-                    p.classList.remove('hidden');
-                }
-            });
-        }
-
-        let lastFilter = {};
-
-        async function checkFilterUpdate() {
-            try {
-                const res = await fetch('https://midi-torpid-trigonometry.glitch.me/api/filter');
-                const filter = await res.json();
-
-                if (JSON.stringify(filter) !== JSON.stringify(lastFilter)) {
-                    lastFilter = filter;
-                    filterProducts(filter.category, filter.brand);
-                }
-            } catch (error) {
-                console.error('Error fetching filter:', error);
+        // Product data
+        const products = [
+            {
+                id: 1,
+                name: "تفاح أحمر",
+                category: "فواكه",
+                brand: "محلي",
+                price: 15.99,
+                image: "https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?w=500"
+            },
+            {
+                id: 2,
+                name: "موز",
+                category: "فواكه",
+                brand: "محلي",
+                price: 12.99,
+                image: "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=500"
+            },
+            {
+                id: 3,
+                name: "طماطم",
+                category: "خضروات",
+                brand: "محلي",
+                price: 8.99,
+                image: "https://images.unsplash.com/photo-1546094097-5c7d7b5c8c8c?w=500"
+            },
+            {
+                id: 4,
+                name: "خيار",
+                category: "خضروات",
+                brand: "محلي",
+                price: 7.99,
+                image: "https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?w=500"
+            },
+            {
+                id: 5,
+                name: "لحم بقري",
+                category: "لحوم",
+                brand: "محلي",
+                price: 89.99,
+                image: "https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=500"
+            },
+            {
+                id: 6,
+                name: "دجاج",
+                category: "لحوم",
+                brand: "محلي",
+                price: 45.99,
+                image: "https://images.unsplash.com/photo-1604503468506-a8da13d82791?w=500"
+            },
+            {
+                id: 7,
+                name: "حليب",
+                category: "ألبان",
+                brand: "مراعي",
+                price: 12.99,
+                image: "https://images.unsplash.com/photo-1563636619-e9143da7973b?w=500"
+            },
+            {
+                id: 8,
+                name: "زبدة",
+                category: "ألبان",
+                brand: "مراعي",
+                price: 15.99,
+                image: "https://images.unsplash.com/photo-1589985270920-85c8c18c84e0?w=500"
+            },
+            {
+                id: 9,
+                name: "عصير برتقال",
+                category: "مشروبات",
+                brand: "عصائر",
+                price: 8.99,
+                image: "https://images.unsplash.com/photo-16134782237192-2b1c2f1c1c1c?w=500"
+            },
+            {
+                id: 10,
+                name: "شوكولاتة",
+                category: "حلويات",
+                brand: "كادبوري",
+                price: 12.99,
+                image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=500"
             }
+            // Add more products here...
+        ];
+
+        // Function to create product cards
+        function createProductCard(product) {
+            return `
+                <div class="product-card" data-category="${product.category}">
+                    <img src="${product.image}" alt="${product.name}" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">${product.name}</h3>
+                        <p class="product-brand">${product.brand}</p>
+                        <p class="product-price">${product.price} ريال</p>
+                        <button class="add-to-cart">أضف إلى السلة</button>
+                    </div>
+                </div>
+            `;
         }
 
-        setInterval(checkFilterUpdate, 2000);
-    </script>
+        // Function to render products
+        function renderProducts(category = 'all') {
+            const container = document.querySelector('.products-container');
+            const filteredProducts = category === 'all' 
+                ? products 
+                : products.filter(p => p.category === category);
+            
+            container.innerHTML = filteredProducts.map(createProductCard).join('');
+        }
 
-    <!-- Botpress Chat Widget -->
-    <script src="https://cdn.botpress.cloud/webchat/v2.5/inject.js"></script>
-    <script src="https://files.bpcontent.cloud/2025/05/16/15/20250516151504-NOZ5039Y.js"></script>
-    <script>
+        // Initialize products
+        renderProducts();
+
+        // Category button click handlers
+        document.querySelectorAll('.category-btn').forEach(button => {
+            button.addEventListener('click', (e) => {
+                document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
+                e.target.classList.add('active');
+                renderProducts(e.target.dataset.category);
+            });
+        });
+
+        // Search functionality
+        document.querySelector('.search-bar input').addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            const filteredProducts = products.filter(p => 
+                p.name.toLowerCase().includes(searchTerm) || 
+                p.brand.toLowerCase().includes(searchTerm)
+            );
+            document.querySelector('.products-container').innerHTML = 
+                filteredProducts.map(createProductCard).join('');
+        });
+
         // Ensure chat widget stays visible
         function ensureChatWidgetVisible() {
             const widget = document.querySelector('#bp-widget');
