@@ -97,6 +97,28 @@
 
     <!-- Botpress Chat Widget -->
     <script src="https://cdn.botpress.cloud/webchat/v2.5/inject.js"></script>
-    <script src="https://files.bpcontent.cloud/2025/05/16/15/20250516151504-NOZ5039Y.js"></script>
+    <script>
+        window.botpressWebChat.init({
+            host: 'https://cdn.botpress.cloud/webchat/v2.5',
+            botId: 'NOZ5039Y',
+            position: 'bottom-right',
+            locale: 'ar',
+            theme: 'light',
+            themeColor: '#2563eb',
+            containerWidth: '400px',
+            layoutWidth: '400px',
+            showConversationsButton: true,
+            enableTranscriptDownload: true,
+            showResetButton: true,
+            showPoweredBy: true,
+            showTimestamp: true,
+            showUserAvatar: true,
+            showBotAvatar: true,
+            botName: 'مساعد المنتجات',
+            botAvatarUrl: 'https://cdn.botpress.cloud/webchat/v2.5/default-avatar.png',
+            userAvatarUrl: 'https://cdn.botpress.cloud/webchat/v2.5/default-avatar.png',
+            stylesheet: 'https://cdn.botpress.cloud/webchat/v2.5/default.css'
+        });
+    </script>
 </body>
 </html> 
