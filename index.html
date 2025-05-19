@@ -177,6 +177,7 @@
     <script>
         // Product data
         const products = [
+            // فواكه (Fruits)
             {
                 id: 1,
                 name: "تفاح أحمر",
@@ -195,6 +196,31 @@
             },
             {
                 id: 3,
+                name: "برتقال",
+                category: "فواكه",
+                brand: "محلي",
+                price: 9.99,
+                image: "https://images.unsplash.com/photo-1547514701-42782101795e?w=500"
+            },
+            {
+                id: 4,
+                name: "عنب",
+                category: "فواكه",
+                brand: "محلي",
+                price: 18.99,
+                image: "https://images.unsplash.com/photo-1515779124587-c3d2b5d0f5c5?w=500"
+            },
+            {
+                id: 5,
+                name: "فراولة",
+                category: "فواكه",
+                brand: "محلي",
+                price: 22.99,
+                image: "https://images.unsplash.com/photo-1464965911861-746a04b4bca6?w=500"
+            },
+            // خضروات (Vegetables)
+            {
+                id: 6,
                 name: "طماطم",
                 category: "خضروات",
                 brand: "محلي",
@@ -202,7 +228,7 @@
                 image: "https://images.unsplash.com/photo-1546094097-5c7d7b5c8c8c?w=500"
             },
             {
-                id: 4,
+                id: 7,
                 name: "خيار",
                 category: "خضروات",
                 brand: "محلي",
@@ -210,7 +236,32 @@
                 image: "https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?w=500"
             },
             {
-                id: 5,
+                id: 8,
+                name: "بصل",
+                category: "خضروات",
+                brand: "محلي",
+                price: 6.99,
+                image: "https://images.unsplash.com/photo-1508747703725-719777637510?w=500"
+            },
+            {
+                id: 9,
+                name: "ثوم",
+                category: "خضروات",
+                brand: "محلي",
+                price: 5.99,
+                image: "https://images.unsplash.com/photo-1540148426945-6cf22a6b2383?w=500"
+            },
+            {
+                id: 10,
+                name: "بطاطس",
+                category: "خضروات",
+                brand: "محلي",
+                price: 7.99,
+                image: "https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=500"
+            },
+            // لحوم (Meat)
+            {
+                id: 11,
                 name: "لحم بقري",
                 category: "لحوم",
                 brand: "محلي",
@@ -218,7 +269,7 @@
                 image: "https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=500"
             },
             {
-                id: 6,
+                id: 12,
                 name: "دجاج",
                 category: "لحوم",
                 brand: "محلي",
@@ -226,7 +277,32 @@
                 image: "https://images.unsplash.com/photo-1604503468506-a8da13d82791?w=500"
             },
             {
-                id: 7,
+                id: 13,
+                name: "لحم مفروم",
+                category: "لحوم",
+                brand: "محلي",
+                price: 55.99,
+                image: "https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=500"
+            },
+            {
+                id: 14,
+                name: "كبدة",
+                category: "لحوم",
+                brand: "محلي",
+                price: 35.99,
+                image: "https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=500"
+            },
+            {
+                id: 15,
+                name: "سجق",
+                category: "لحوم",
+                brand: "محلي",
+                price: 42.99,
+                image: "https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=500"
+            },
+            // ألبان (Dairy)
+            {
+                id: 16,
                 name: "حليب",
                 category: "ألبان",
                 brand: "مراعي",
@@ -234,7 +310,7 @@
                 image: "https://images.unsplash.com/photo-1563636619-e9143da7973b?w=500"
             },
             {
-                id: 8,
+                id: 17,
                 name: "زبدة",
                 category: "ألبان",
                 brand: "مراعي",
@@ -242,7 +318,32 @@
                 image: "https://images.unsplash.com/photo-1589985270920-85c8c18c84e0?w=500"
             },
             {
-                id: 9,
+                id: 18,
+                name: "جبنة",
+                category: "ألبان",
+                brand: "مراعي",
+                price: 18.99,
+                image: "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=500"
+            },
+            {
+                id: 19,
+                name: "زبادي",
+                category: "ألبان",
+                brand: "مراعي",
+                price: 8.99,
+                image: "https://images.unsplash.com/photo-1488477181946-6428a848b919?w=500"
+            },
+            {
+                id: 20,
+                name: "كريمة",
+                category: "ألبان",
+                brand: "مراعي",
+                price: 9.99,
+                image: "https://images.unsplash.com/photo-1550583724-b2692b85b150?w=500"
+            },
+            // مشروبات (Beverages)
+            {
+                id: 21,
                 name: "عصير برتقال",
                 category: "مشروبات",
                 brand: "عصائر",
@@ -250,14 +351,651 @@
                 image: "https://images.unsplash.com/photo-16134782237192-2b1c2f1c1c1c?w=500"
             },
             {
-                id: 10,
+                id: 22,
+                name: "عصير تفاح",
+                category: "مشروبات",
+                brand: "عصائر",
+                price: 8.99,
+                image: "https://images.unsplash.com/photo-16134782237192-2b1c2f1c1c1c?w=500"
+            },
+            {
+                id: 23,
+                name: "عصير مانجو",
+                category: "مشروبات",
+                brand: "عصائر",
+                price: 9.99,
+                image: "https://images.unsplash.com/photo-16134782237192-2b1c2f1c1c1c?w=500"
+            },
+            {
+                id: 24,
+                name: "ماء معدني",
+                category: "مشروبات",
+                brand: "نستله",
+                price: 2.99,
+                image: "https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=500"
+            },
+            {
+                id: 25,
+                name: "شاي",
+                category: "مشروبات",
+                brand: "ليبتون",
+                price: 15.99,
+                image: "https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=500"
+            },
+            // حلويات (Sweets)
+            {
+                id: 26,
                 name: "شوكولاتة",
                 category: "حلويات",
                 brand: "كادبوري",
                 price: 12.99,
                 image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=500"
+            },
+            {
+                id: 27,
+                name: "بسكويت",
+                category: "حلويات",
+                brand: "أوريو",
+                price: 8.99,
+                image: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=500"
+            },
+            {
+                id: 28,
+                name: "حلوى",
+                category: "حلويات",
+                brand: "مارس",
+                price: 5.99,
+                image: "https://images.unsplash.com/photo-1581441363689-1f3c3c414635?w=500"
+            },
+            {
+                id: 29,
+                name: "كيك",
+                category: "حلويات",
+                brand: "محلي",
+                price: 25.99,
+                image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500"
+            },
+            {
+                id: 30,
+                name: "آيس كريم",
+                category: "حلويات",
+                brand: "باسكن روبنز",
+                price: 15.99,
+                image: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=500"
+            },
+            // More Fruits
+            {
+                id: 31,
+                name: "مانجو",
+                category: "فواكه",
+                brand: "محلي",
+                price: 19.99,
+                image: "https://images.unsplash.com/photo-1553279768-865429fa0078?w=500"
+            },
+            {
+                id: 32,
+                name: "أناناس",
+                category: "فواكه",
+                brand: "محلي",
+                price: 24.99,
+                image: "https://images.unsplash.com/photo-1550258987-190a2d41a8ba?w=500"
+            },
+            {
+                id: 33,
+                name: "كيوي",
+                category: "فواكه",
+                brand: "محلي",
+                price: 16.99,
+                image: "https://images.unsplash.com/photo-1585059891334-1b8b9241fd98?w=500"
+            },
+            {
+                id: 34,
+                name: "رمان",
+                category: "فواكه",
+                brand: "محلي",
+                price: 14.99,
+                image: "https://images.unsplash.com/photo-1541344999738-949a5b9fdd63?w=500"
+            },
+            {
+                id: 35,
+                name: "توت",
+                category: "فواكه",
+                brand: "محلي",
+                price: 25.99,
+                image: "https://images.unsplash.com/photo-1546173159-315724a31696?w=500"
+            },
+            // More Vegetables
+            {
+                id: 36,
+                name: "جزر",
+                category: "خضروات",
+                brand: "محلي",
+                price: 6.99,
+                image: "https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?w=500"
+            },
+            {
+                id: 37,
+                name: "فلفل",
+                category: "خضروات",
+                brand: "محلي",
+                price: 8.99,
+                image: "https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?w=500"
+            },
+            {
+                id: 38,
+                name: "باذنجان",
+                category: "خضروات",
+                brand: "محلي",
+                price: 7.99,
+                image: "https://images.unsplash.com/photo-1635340966666-8798ff6c9e98?w=500"
+            },
+            {
+                id: 39,
+                name: "كوسا",
+                category: "خضروات",
+                brand: "محلي",
+                price: 6.99,
+                image: "https://images.unsplash.com/photo-1594283255768-9e4e6ba3346f?w=500"
+            },
+            {
+                id: 40,
+                name: "سبانخ",
+                category: "خضروات",
+                brand: "محلي",
+                price: 5.99,
+                image: "https://images.unsplash.com/photo-1576045057995-568f588f82fb?w=500"
+            },
+            // More Meat
+            {
+                id: 41,
+                name: "لحم غنم",
+                category: "لحوم",
+                brand: "محلي",
+                price: 95.99,
+                image: "https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=500"
+            },
+            {
+                id: 42,
+                name: "لحم مبرد",
+                category: "لحوم",
+                brand: "محلي",
+                price: 75.99,
+                image: "https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=500"
+            },
+            {
+                id: 43,
+                name: "لحم مجمد",
+                category: "لحوم",
+                brand: "محلي",
+                price: 65.99,
+                image: "https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=500"
+            },
+            {
+                id: 44,
+                name: "دجاج مشوي",
+                category: "لحوم",
+                brand: "محلي",
+                price: 55.99,
+                image: "https://images.unsplash.com/photo-1604503468506-a8da13d82791?w=500"
+            },
+            {
+                id: 45,
+                name: "دجاج مبرد",
+                category: "لحوم",
+                brand: "محلي",
+                price: 45.99,
+                image: "https://images.unsplash.com/photo-1604503468506-a8da13d82791?w=500"
+            },
+            // More Dairy
+            {
+                id: 46,
+                name: "حليب كامل",
+                category: "ألبان",
+                brand: "مراعي",
+                price: 13.99,
+                image: "https://images.unsplash.com/photo-1563636619-e9143da7973b?w=500"
+            },
+            {
+                id: 47,
+                name: "حليب خالي الدسم",
+                category: "ألبان",
+                brand: "مراعي",
+                price: 12.99,
+                image: "https://images.unsplash.com/photo-1563636619-e9143da7973b?w=500"
+            },
+            {
+                id: 48,
+                name: "جبنة بيضاء",
+                category: "ألبان",
+                brand: "مراعي",
+                price: 19.99,
+                image: "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=500"
+            },
+            {
+                id: 49,
+                name: "جبنة صفراء",
+                category: "ألبان",
+                brand: "مراعي",
+                price: 21.99,
+                image: "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=500"
+            },
+            {
+                id: 50,
+                name: "زبادي فواكه",
+                category: "ألبان",
+                brand: "مراعي",
+                price: 9.99,
+                image: "https://images.unsplash.com/photo-1488477181946-6428a848b919?w=500"
+            },
+            // More Beverages
+            {
+                id: 51,
+                name: "عصير فراولة",
+                category: "مشروبات",
+                brand: "عصائر",
+                price: 9.99,
+                image: "https://images.unsplash.com/photo-16134782237192-2b1c2f1c1c1c?w=500"
+            },
+            {
+                id: 52,
+                name: "عصير ليمون",
+                category: "مشروبات",
+                brand: "عصائر",
+                price: 8.99,
+                image: "https://images.unsplash.com/photo-16134782237192-2b1c2f1c1c1c?w=500"
+            },
+            {
+                id: 53,
+                name: "عصير جزر",
+                category: "مشروبات",
+                brand: "عصائر",
+                price: 9.99,
+                image: "https://images.unsplash.com/photo-16134782237192-2b1c2f1c1c1c?w=500"
+            },
+            {
+                id: 54,
+                name: "قهوة",
+                category: "مشروبات",
+                brand: "نسكافيه",
+                price: 45.99,
+                image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=500"
+            },
+            {
+                id: 55,
+                name: "نسكافيه",
+                category: "مشروبات",
+                brand: "نسكافيه",
+                price: 35.99,
+                image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=500"
+            },
+            // More Sweets
+            {
+                id: 56,
+                name: "شوكولاتة بالحليب",
+                category: "حلويات",
+                brand: "كادبوري",
+                price: 13.99,
+                image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=500"
+            },
+            {
+                id: 57,
+                name: "شوكولاتة داكنة",
+                category: "حلويات",
+                brand: "كادبوري",
+                price: 14.99,
+                image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=500"
+            },
+            {
+                id: 58,
+                name: "بسكويت شوكولاتة",
+                category: "حلويات",
+                brand: "أوريو",
+                price: 9.99,
+                image: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=500"
+            },
+            {
+                id: 59,
+                name: "بسكويت فانيليا",
+                category: "حلويات",
+                brand: "أوريو",
+                price: 8.99,
+                image: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=500"
+            },
+            {
+                id: 60,
+                name: "حلوى فواكه",
+                category: "حلويات",
+                brand: "مارس",
+                price: 6.99,
+                image: "https://images.unsplash.com/photo-1581441363689-1f3c3c414635?w=500"
+            },
+            // More Fruits
+            {
+                id: 61,
+                name: "عنب",
+                category: "فواكه",
+                brand: "محلي",
+                price: 18.99,
+                image: "https://images.unsplash.com/photo-1515488764276-beab7607c1e6?w=500"
+            },
+            {
+                id: 62,
+                name: "خوخ",
+                category: "فواكه",
+                brand: "محلي",
+                price: 15.99,
+                image: "https://images.unsplash.com/photo-1553279768-865429fa0078?w=500"
+            },
+            {
+                id: 63,
+                name: "كمثرى",
+                category: "فواكه",
+                brand: "محلي",
+                price: 12.99,
+                image: "https://images.unsplash.com/photo-1553279768-865429fa0078?w=500"
+            },
+            {
+                id: 64,
+                name: "برتقال",
+                category: "فواكه",
+                brand: "محلي",
+                price: 8.99,
+                image: "https://images.unsplash.com/photo-1547514701-42782101795e?w=500"
+            },
+            {
+                id: 65,
+                name: "ليمون",
+                category: "فواكه",
+                brand: "محلي",
+                price: 7.99,
+                image: "https://images.unsplash.com/photo-1547514701-42782101795e?w=500"
+            },
+            // More Vegetables
+            {
+                id: 66,
+                name: "بصل",
+                category: "خضروات",
+                brand: "محلي",
+                price: 4.99,
+                image: "https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?w=500"
+            },
+            {
+                id: 67,
+                name: "ثوم",
+                category: "خضروات",
+                brand: "محلي",
+                price: 5.99,
+                image: "https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?w=500"
+            },
+            {
+                id: 68,
+                name: "بطاطس",
+                category: "خضروات",
+                brand: "محلي",
+                price: 6.99,
+                image: "https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?w=500"
+            },
+            {
+                id: 69,
+                name: "طماطم",
+                category: "خضروات",
+                brand: "محلي",
+                price: 7.99,
+                image: "https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?w=500"
+            },
+            {
+                id: 70,
+                name: "خيار",
+                category: "خضروات",
+                brand: "محلي",
+                price: 5.99,
+                image: "https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?w=500"
+            },
+            // More Meat
+            {
+                id: 71,
+                name: "لحم بقري",
+                category: "لحوم",
+                brand: "محلي",
+                price: 85.99,
+                image: "https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=500"
+            },
+            {
+                id: 72,
+                name: "لحم مفروم",
+                category: "لحوم",
+                brand: "محلي",
+                price: 65.99,
+                image: "https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=500"
+            },
+            {
+                id: 73,
+                name: "لحم مشوي",
+                category: "لحوم",
+                brand: "محلي",
+                price: 75.99,
+                image: "https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=500"
+            },
+            {
+                id: 74,
+                name: "دجاج كامل",
+                category: "لحوم",
+                brand: "محلي",
+                price: 45.99,
+                image: "https://images.unsplash.com/photo-1604503468506-a8da13d82791?w=500"
+            },
+            {
+                id: 75,
+                name: "دجاج مقطع",
+                category: "لحوم",
+                brand: "محلي",
+                price: 35.99,
+                image: "https://images.unsplash.com/photo-1604503468506-a8da13d82791?w=500"
+            },
+            // More Dairy
+            {
+                id: 76,
+                name: "زبدة",
+                category: "ألبان",
+                brand: "مراعي",
+                price: 12.99,
+                image: "https://images.unsplash.com/photo-1563636619-e9143da7973b?w=500"
+            },
+            {
+                id: 77,
+                name: "كريمة",
+                category: "ألبان",
+                brand: "مراعي",
+                price: 14.99,
+                image: "https://images.unsplash.com/photo-1563636619-e9143da7973b?w=500"
+            },
+            {
+                id: 78,
+                name: "جبنة موزاريلا",
+                category: "ألبان",
+                brand: "مراعي",
+                price: 22.99,
+                image: "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=500"
+            },
+            {
+                id: 79,
+                name: "جبنة شيدر",
+                category: "ألبان",
+                brand: "مراعي",
+                price: 24.99,
+                image: "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=500"
+            },
+            {
+                id: 80,
+                name: "زبادي طبيعي",
+                category: "ألبان",
+                brand: "مراعي",
+                price: 8.99,
+                image: "https://images.unsplash.com/photo-1488477181946-6428a848b919?w=500"
+            },
+            // More Beverages
+            {
+                id: 81,
+                name: "عصير برتقال",
+                category: "مشروبات",
+                brand: "عصائر",
+                price: 7.99,
+                image: "https://images.unsplash.com/photo-16134782237192-2b1c2f1c1c1c?w=500"
+            },
+            {
+                id: 82,
+                name: "عصير تفاح",
+                category: "مشروبات",
+                brand: "عصائر",
+                price: 8.99,
+                image: "https://images.unsplash.com/photo-16134782237192-2b1c2f1c1c1c?w=500"
+            },
+            {
+                id: 83,
+                name: "عصير مانجو",
+                category: "مشروبات",
+                brand: "عصائر",
+                price: 9.99,
+                image: "https://images.unsplash.com/photo-16134782237192-2b1c2f1c1c1c?w=500"
+            },
+            {
+                id: 84,
+                name: "شاي",
+                category: "مشروبات",
+                brand: "ليبتون",
+                price: 25.99,
+                image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=500"
+            },
+            {
+                id: 85,
+                name: "شاي أخضر",
+                category: "مشروبات",
+                brand: "ليبتون",
+                price: 28.99,
+                image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=500"
+            },
+            // More Sweets
+            {
+                id: 86,
+                name: "شوكولاتة بيضاء",
+                category: "حلويات",
+                brand: "كادبوري",
+                price: 12.99,
+                image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=500"
+            },
+            {
+                id: 87,
+                name: "شوكولاتة بالبندق",
+                category: "حلويات",
+                brand: "كادبوري",
+                price: 15.99,
+                image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=500"
+            },
+            {
+                id: 88,
+                name: "بسكويت بالشوكولاتة",
+                category: "حلويات",
+                brand: "أوريو",
+                price: 10.99,
+                image: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=500"
+            },
+            {
+                id: 89,
+                name: "بسكويت بالكريمة",
+                category: "حلويات",
+                brand: "أوريو",
+                price: 9.99,
+                image: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=500"
+            },
+            {
+                id: 90,
+                name: "حلوى شوكولاتة",
+                category: "حلويات",
+                brand: "مارس",
+                price: 7.99,
+                image: "https://images.unsplash.com/photo-1581441363689-1f3c3c414635?w=500"
+            },
+            // Final Products
+            {
+                id: 91,
+                name: "عصير أناناس",
+                category: "مشروبات",
+                brand: "عصائر",
+                price: 10.99,
+                image: "https://images.unsplash.com/photo-16134782237192-2b1c2f1c1c1c?w=500"
+            },
+            {
+                id: 92,
+                name: "عصير جوز الهند",
+                category: "مشروبات",
+                brand: "عصائر",
+                price: 11.99,
+                image: "https://images.unsplash.com/photo-16134782237192-2b1c2f1c1c1c?w=500"
+            },
+            {
+                id: 93,
+                name: "جبنة فيتا",
+                category: "ألبان",
+                brand: "مراعي",
+                price: 23.99,
+                image: "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=500"
+            },
+            {
+                id: 94,
+                name: "جبنة رومي",
+                category: "ألبان",
+                brand: "مراعي",
+                price: 25.99,
+                image: "https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=500"
+            },
+            {
+                id: 95,
+                name: "لحم ديك رومي",
+                category: "لحوم",
+                brand: "محلي",
+                price: 55.99,
+                image: "https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=500"
+            },
+            {
+                id: 96,
+                name: "لحم ضأن",
+                category: "لحوم",
+                brand: "محلي",
+                price: 75.99,
+                image: "https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=500"
+            },
+            {
+                id: 97,
+                name: "باذنجان مشوي",
+                category: "خضروات",
+                brand: "محلي",
+                price: 8.99,
+                image: "https://images.unsplash.com/photo-1635340966666-8798ff6c9e98?w=500"
+            },
+            {
+                id: 98,
+                name: "فلفل حار",
+                category: "خضروات",
+                brand: "محلي",
+                price: 7.99,
+                image: "https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?w=500"
+            },
+            {
+                id: 99,
+                name: "توت أزرق",
+                category: "فواكه",
+                brand: "محلي",
+                price: 22.99,
+                image: "https://images.unsplash.com/photo-1546173159-315724a31696?w=500"
+            },
+            {
+                id: 100,
+                name: "توت أحمر",
+                category: "فواكه",
+                brand: "محلي",
+                price: 21.99,
+                image: "https://images.unsplash.com/photo-1546173159-315724a31696?w=500"
             }
-            // Add more products here...
         ];
 
         // Function to create product cards
